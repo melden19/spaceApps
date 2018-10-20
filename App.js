@@ -1,25 +1,52 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createStore } from 'redux';
+import { createStackNavigator } from 'react-navigation';
+import { connect, Provider } from 'react-redux';
+import { Font } from 'expo'
+
 import {
   LoginRegistrationPage,
   NaturalHazards,
   SelectTypePage
 } from './components';
-// import HomeScreen from './components/Home';
-// import LoginPage from './components/LoginRegistrationPage'
-// import NaturalPage from './components/NaturalHazards' 
-import { createStackNavigator } from 'react-navigation'
+import general from './actions/general';
+import rootReducer from './reducers';
 
-export default App = createStackNavigator({
+const RouterPages = createStackNavigator({
   Login: { screen: LoginRegistrationPage },
   SelectType: {screen: SelectTypePage},
   Natural : { screen: NaturalHazards },
 });
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+class Router extends React.Component {
+  async componentDidMount() {
+    await Font.loadAsync({
+      'regularFont': require('./assets/fonts/Raleway-Regular.ttf'),
+      'boldFont': require('./assets/fonts/Raleway-ExtraBold.ttf'),
+    });
+    this.props.changeFontLoadStatus();
+  }
+  render() {
+    return <RouterPages /> 
+  }
+}
+
+const mapStateToProps = (state) => ({
+  fontDownloaded: state.general.fontDownloaded
+})
+const mapDispatchToProps = (dispatch) => ({
+  changeFontLoadStatus: () => dispatch(general.changeFontStatus()) 
+})
+
+const WrappedRouter = connect(mapStateToProps, mapDispatchToProps)(Router);
+
+const store = createStore(rootReducer);
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <WrappedRouter />
+      </Provider>
+    )
+  }
+}

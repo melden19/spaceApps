@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, ImageBackground } from 'react-native';
+import { FontText } from '../../components';
 
 export default class SelectTypePage extends React.Component {
   state = {
@@ -31,9 +32,9 @@ export default class SelectTypePage extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.titlecontainer}>
-          <Text style={styles.title}>
-            What happened?
-          </Text>
+          <FontText isBold style={styles.title}>
+            Choose disaster type
+          </FontText>
         </View>
         <ImageBackground
           style={[styles.backgroundImg, styles.marginBottom]}
@@ -48,7 +49,7 @@ export default class SelectTypePage extends React.Component {
             onShowUnderlay={this.onShowUnderlay}
             onPress={this.goToNaturals}
           >
-            <Text style={styles.text}>Natural Disaster</Text>
+            <Text style={styles.text}>Natural Disasters</Text>
           </TouchableOpacity >
         </ImageBackground>
         
@@ -65,13 +66,13 @@ export default class SelectTypePage extends React.Component {
             onShowUnderlay={this.onShowUnderlay}
             onPress={this.goToNaturals}
           >
-            <Text style={styles.text}>Natural Disaster</Text>
+            <FontText style={styles.text}>Antropogenic Hazards</FontText>
           </TouchableOpacity >
         </ImageBackground>
 
         <TouchableOpacity style={styles.sosBtn}>
-          <Text style={styles.sostext}>SOS</Text>
-        </TouchableOpacity> */}
+          <FontText style={styles.sostext}>SOS</FontText>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -82,10 +83,9 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     height: "100%",
-    backgroundColor: "#c9efff",
+    backgroundColor: "#f2fcff",
     alignItems: "center", 
     flexDirection: "column",
-    borderWidth: 2
   },
   titlecontainer:{
     position: "relative",
@@ -97,13 +97,19 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: 30,
-    fontWeight: '700'
+    fontSize: 25
   },
   backgroundImg: {
     height: '25%',
     width: '80%',
-    borderRadius: 5
+    borderRadius: 5,
+    borderColor: '#ddd',
+    borderBottomWidth: 0,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 1,
   },
   navigationBtn: {
     justifyContent: "center",
@@ -129,7 +135,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: '40%',
     height: '10%',
-    marginTop: 60,
+    marginTop: 20,
     borderRadius: 40
   },
   sostext: {

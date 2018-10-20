@@ -15,18 +15,6 @@ export default class SelectTypePage extends React.Component {
     navigate('Natural', null);
   }
 
-  onHideOverlay = () => {
-    this.setState({
-      btnPressStatus: false
-    });
-  }
-
-  onShowOverlay = () => {
-    this.setState({
-      btnPressStatus: true
-    });
-  }
-
   render() {
     return (
       <View style={styles.container}>
@@ -43,7 +31,7 @@ export default class SelectTypePage extends React.Component {
         >
           <TouchableOpacity
             activeOpacity={0}
-            style={this.state.btnPressStatus ? { ...styles.navigationBtn, backgroundColor: 'rgba(0, 0, 0, 0)' } : styles.navigationBtn}
+            style={styles.navigationBtn}
             onHideUnderlay={this.onHideOverlay}
             onShowUnderlay={this.onShowUnderlay}
             onPress={this.goToNaturals}
@@ -53,7 +41,7 @@ export default class SelectTypePage extends React.Component {
         </ImageBackground>
         
         <ImageBackground
-          style={styles.backgroundImg}
+          style={[styles.backgroundImg, styles.marginBottom]}
           imageStyle={{ borderRadius: 25 }}
           source={require('../../assets/DkK2YzIX0AEcx9_.jpg')}
           blurRadius={3}
@@ -71,7 +59,7 @@ export default class SelectTypePage extends React.Component {
 
         <TouchableOpacity style={styles.sosBtn}>
           <Text style={styles.sostext}>SOS</Text>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
       </View>
     );
   }
@@ -82,10 +70,9 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     height: "100%",
-    backgroundColor: "#c9efff",
+    backgroundColor: "#f2fcff",
     alignItems: "center", 
-    flexDirection: "column",
-    borderWidth: 2
+    flexDirection: "column"
   },
   titlecontainer:{
     position: "relative",
@@ -101,16 +88,25 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
   backgroundImg: {
-    height: '25%',
+    height: 140,
     width: '80%',
-    borderRadius: 5
+    borderRadius: 5,
+    borderColor: '#ddd',
+    borderBottomWidth: 0,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 1,
+    
   },
   navigationBtn: {
     justifyContent: "center",
     alignItems: "center",
     width: '100%',
-    height: '100%',
+    height: 140,
     marginBottom: 20,
+    borderRadius:25 
   },
   btnStyle: {
     width: '100%',
@@ -129,7 +125,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: '40%',
     height: '10%',
-    marginTop: 60,
+    marginTop: 15,
     borderRadius: 40
   },
   sostext: {

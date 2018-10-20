@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, ImageBackground } from 'react-native';
+import { FontText } from '../../components';
 
 export default class SelectTypePage extends React.Component {
   state = {
@@ -19,9 +20,9 @@ export default class SelectTypePage extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.titlecontainer}>
-          <Text style={styles.title}>
-            What happened?
-          </Text>
+          <FontText isBold style={styles.title}>
+            Choose disaster type
+          </FontText>
         </View>
         <ImageBackground
           style={[styles.backgroundImg, styles.marginBottom]}
@@ -36,7 +37,7 @@ export default class SelectTypePage extends React.Component {
             onShowUnderlay={this.onShowUnderlay}
             onPress={this.goToNaturals}
           >
-            <Text style={styles.text}>Natural Disaster</Text>
+            <FontText style={styles.text}>Natural Disasters</FontText>
           </TouchableOpacity >
         </ImageBackground>
         
@@ -53,12 +54,12 @@ export default class SelectTypePage extends React.Component {
             onShowUnderlay={this.onShowUnderlay}
             onPress={this.goToNaturals}
           >
-            <Text style={styles.text}>Natural Disaster</Text>
+            <FontText style={styles.text}>Antropogenic Hazards</FontText>
           </TouchableOpacity >
         </ImageBackground>
 
         <TouchableOpacity style={styles.sosBtn}>
-          <Text style={styles.sostext}>SOS</Text>
+          <FontText style={styles.sostext}>SOS</FontText>
         </TouchableOpacity>
       </View>
     );
@@ -84,8 +85,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: 30,
-    fontWeight: '700'
+    fontSize: 25
   },
   backgroundImg: {
     height: 140,
@@ -98,7 +98,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 1,
-    
   },
   navigationBtn: {
     justifyContent: "center",

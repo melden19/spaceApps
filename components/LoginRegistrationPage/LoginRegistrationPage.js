@@ -1,12 +1,13 @@
 import React from 'react';
 import SelectTypePage from '../SelectTypePage';
 import { StyleSheet, Text, View, Button } from 'react-native';
-
+import { FontText } from '../../components';
 export default class LoginRegistrationPage extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
+        <FontText isBold>Open up </FontText>
         <Text>Open up </Text>
         <Button
           title="Go to Jane's profile"
@@ -27,19 +28,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-// export default class Login extends React.Component {
-//   state = {
-//     data: null
-//   }
-
-//   // componentDidMount() {
-//   //   fetch('http://192.168.88.178:8080/').then(response => response.json()).then(response => this.setState({ data: response.data }));
-//   // }
-//   render() {
-//     return (
-      
-//       <SelectTypePage />
-//     );
-//   }
-// }

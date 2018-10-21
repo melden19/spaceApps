@@ -6,3 +6,4 @@ export TestLoginPage from './TestLoginPage';
 export TestRegPage from './TestRegPage';
 export GeoDisPage from './GeoDisPage';
 export EarthInfoPage from './EarthInfoPage';
+export VInfoPage from './VInfoPage';

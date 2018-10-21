@@ -1,45 +1,48 @@
 import React from 'react'
 import { View, StyleSheet, Text, TouchableOpacity, ImageBackground, TextInput, Button, Keyboard, ScrollView } from 'react-native';
 import { FontText } from '../../components';
-export default class EarthInfo extends React.Component {
+export default class VInfo extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <View style={styles.titlecontainer}>
           <FontText isBold style={styles.title}>
-            Earthquake
+          Volcanic Eruption
           </FontText>
         </View>
         <View style={styles.topcontainer}>      
         <ImageBackground
         style={styles.backgroundImg}
         imageStyle={{ borderRadius: 5 }}
-        source={require('../../assets/earth1.jpg')}
+        source={require('../../assets/v1.jpg')}
         onLoad={this.addToLoaded}
       >      
       </ImageBackground>   
       <View style={styles.textcontainer}>
-      <Text>An earthquake (also known as a quake, tremor or temblor) is the shaking of the surface of the Earth,
-resulting from the sudden release of energy in the Earth's lithosphere that creates seismic waves. 
-Earthquakes can range in size from those that are so weak that they cannot be felt to those violent 
-enough to toss people around and destroy whole cities.</Text>
+      <Text>A volcanic eruption occurs when hot materials from the earth's interior are thrown out of a volcano.
+ Lava, rocks, dust, and gas compounds are some of these "ejecta".
+Eruptions can come from side branches or from the top of the volcano.
+ Some eruptions are terrible explosions that throw out huge amounts of rock and volcanic ash and kill many people.
+ Some are quiet outflows of hot lava. </Text>
       </View>
         </View>    
         <View style={styles.botcontainer}>  
         <ScrollView>
         <View style={styles.titlecontainer}>
           <FontText style={styles.title}>
-          If Shaking Begins
+          Safety Tips
           </FontText>
         </View> 
-          <Text>• Drop down; take cover under a desk or table and hold on.</Text>
-          <Text>• Stay indoors until the shaking stops and you're sure it's safe to exit.</Text>
-          <Text>• Stay away from bookcases or furniture that can fall on you.</Text>
-          <Text>• Stay away from windows. In a high-rise building, expect the fire alarms and sprinklers to go off during a quake.</Text>
-          <Text>• If you are in bed, hold on and stay there, protecting your head with a pillow.</Text>
-          <Text>• If you are outdoors, find a clear spot away from buildings, trees, and power lines. Drop to the ground.</Text>
-          <Text>• If you are in a car, slow down and drive to a clear place. Stay in the car until the shaking stops.</Text>
+          <Text>• As much as possible, stay away from active volcanoes.</Text>
+          <Text>• If you live near an active volcano, keep goggles and a mask in an emergency kit, along with a flashlight and a working, battery-operated radio.</Text>
+          <Text>• Know your evacuation route. Keep gas in your car.</Text>
+          <Text>• Evacuate only as recommended by authorities to stay clear of lava, mud flows, and flying rocks and debris.</Text>
+          <Text>• Avoid river areas and low-lying regions.</Text>
+          <Text>• Before you leave the house, change into long-sleeved shirts and long pants and use goggles or eyeglasses, not contacts. Wear an emergency mask or hold a damp cloth over your face.</Text>
+          <Text>• If you are not evacuating, close windows and doors and block chimneys and other vents, to prevent ash from coming into the house.</Text>
+          <Text>• Be aware that ash may put excess weight on your roof and need to be swept away. Wear protection during cleanups.</Text>
+          <Text>• Ash can damage engines and metal parts, so avoid driving. If you must drive, stay below 35 miles (56 kilometers) an hour.</Text>
           </ScrollView>
         </View>    
       </View> 

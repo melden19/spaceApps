@@ -10,6 +10,10 @@ export default class GeoDis extends Component {
     title: '',
   };
 
+  goToV = () => {
+    const { navigate } = this.props.navigation;
+    navigate('VInf', null);
+  }
   goToGeo = () => {
     const { navigate } = this.props.navigation;
     navigate('GeoD', null);
@@ -94,7 +98,7 @@ export default class GeoDis extends Component {
             style={styles.navigationBtn}
             onHideUnderlay={this.onHideOverlay}
             onShowUnderlay={this.onShowUnderlay}
-            onPress={this.goToGeo}
+            onPress={this.goToV}
           >
             <FontText style={styles.text}>Volcanic Eruption</FontText>
           </TouchableOpacity >

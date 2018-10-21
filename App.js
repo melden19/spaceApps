@@ -11,7 +11,8 @@ import {
   TestLoginPage,
   TestRegPage,
   GeoDisPage,
-  EarthInfoPage
+  EarthInfoPage,
+  VInfoPage
 } from './components';
 import general from './actions/general';
 import rootReducer from './reducers';
@@ -23,7 +24,8 @@ const RouterPages = createStackNavigator({
   SelectType: {screen: SelectTypePage},
   Natural : { screen: NaturalHazards },
   GeoD: {screen: GeoDisPage},
-  EInf: {screen: EarthInfoPage}
+  EInf: {screen: EarthInfoPage},
+  VInf: {screen: VInfoPage}
 });
 class Router extends React.Component {
   async componentDidMount() {

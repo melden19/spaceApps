@@ -44,8 +44,6 @@ export default class Reg extends React.Component {
             style={styles.inputstyle}
             placeholder=""
             onChangeText={(log) => this.setState({log})}
-            // onFocus={()=> this.setState({ firstInputFocus: true })}
-            //onSubmitEditing={()=> this.setState({ firstInputFocus: false })}
           />
           </View>
           <View style={styles.inputbox}>
@@ -54,8 +52,6 @@ export default class Reg extends React.Component {
             style={styles.inputstyle}
             placeholder=""
             onChangeText={(pass) => this.setState({pass})}
-            // onFocus={()=> this.setState({ firstInputFocus: true })}
-            //onSubmitEditing={()=> this.setState({ firstInputFocus: false })}
           />
           </View>
           <View style={[styles.inputbox, { borderBottomWidth: 0 }]}>

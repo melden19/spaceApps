@@ -4,25 +4,10 @@ import Modal from 'react-native-modalbox';
 import { FontText } from '../../components';
 import { SearchBar, Button } from 'react-native-elements'
 
-const imagesNames = [
-  '../../assets/nature.jpg',
-  '../../assets/technical.jpg',
-  // 'technical',
-];
-
 export default class SelectTypePage extends React.Component {
   state = {
     loadedImages: [],
     modalIsOpen: false
-  }
-
-  loadAllImages = async () => {
-    const newArray = await imagesNames.map(url => {
-      return Image.prefetch(`../../assets/${url}.jpg`);
-    });
-    this.setState({
-      images: newArray
-    })
   }
 
   toggleModal = () => {
@@ -31,25 +16,18 @@ export default class SelectTypePage extends React.Component {
     }));
   }
 
-  // componentDidMount() {
-  //   this.loadAllImages();
-  // }
-
   static navigationOptions = {
     title: '',
   };
 
-  addToLoaded = () => {
-    const newArr = [ ...this.state.loadedImages ];
-    newArr.push();
-    this.setState({
-      loadedImages: newArr
-    })
-  }
-
   goToNaturals = () => {
     const { navigate } = this.props.navigation;
     navigate('Natural', null);
+  }
+
+  goToAntropogenic = () => {
+    const { navigate } = this.props.navigation;
+    navigate('ListFromServer', null);
   }
 
   render() {
@@ -90,11 +68,15 @@ export default class SelectTypePage extends React.Component {
           style={styles.navigationBtn}
           onHideUnderlay={this.onHideOverlay}
           onShowUnderlay={this.onShowUnderlay}
-          onPress={this.goToNaturals}
+          onPress={this.goToAntropogenic}
         >
           <FontText style={styles.text}>Antropogenic Hazards</FontText>
         </TouchableOpacity >
       </ImageBackground>
+
+      <TouchableOpacity style={styles.sosBtn} onPress={() => this.props.navigation.navigate('CheckboxList', null)}>
+        <FontText style={styles.sostext}>Checklist</FontText>
+      </TouchableOpacity>
 
       <TouchableOpacity style={styles.sosBtn} onPress={this.toggleModal}>
         <FontText style={styles.sostext}>SOS</FontText>

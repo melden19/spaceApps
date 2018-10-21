@@ -4,3 +4,5 @@ export SelectTypePage from './SelectTypePage';
 export FontText from './FontText';
 export TestLoginPage from './TestLoginPage';
 export TestRegPage from './TestRegPage';
+export ListFromServer from './ListFromServer';
+export CheckboxList from './CheckboxList'

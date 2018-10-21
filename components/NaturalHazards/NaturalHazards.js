@@ -23,6 +23,8 @@ export default class NaturalHazardStyle extends Component {
           <FontText isBold style={styles.title}>
             Natural disasters
           </FontText>  
+          <View style={styles.undline}>
+          </View>
         </View>
 
         <ImageBackground
@@ -137,6 +139,16 @@ const styles = StyleSheet.create({
     width: '80%',
     height: 50,
     marginBottom: 20,
+  },
+  undline: {
+    position: "relative",
+    marginTop: 7,
+    justifyContent: "center",
+    alignItems: "center",
+    width: '90%',
+    height: 1,
+    backgroundColor: "#B4D0DD"
+    
   },
   title: {
     fontSize: 30,

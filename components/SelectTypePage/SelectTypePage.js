@@ -59,6 +59,8 @@ export default class SelectTypePage extends React.Component {
         <FontText isBold style={styles.title}>
           Choose disaster type
         </FontText>
+        <View style={styles.undline}>
+        </View>
       </View>
       <ImageBackground
         style={[styles.backgroundImg, styles.marginBottom]}
@@ -135,6 +137,16 @@ const styles = StyleSheet.create({
     width: '80%',
     height: 50,
     marginBottom: 20,
+  },
+  undline: {
+    position: "relative",
+    marginTop: 7,
+    justifyContent: "center",
+    alignItems: "center",
+    width: '90%',
+    height: 1,
+    backgroundColor: "#B4D0DD"
+    
   },
   title: {
     fontSize: 25

@@ -9,9 +9,18 @@ export default class CheckboxList extends Component {
     modalIsOpen: false,
     textInputValue: '',
     checkBoxes: [
-      'qwe',
-      'asd',
-      'zxc'
+      'water',
+      'portable carbon filter',
+      'water purification tablets',
+      'non-perishable food',
+      'backpack',
+      'coffee',
+      'tea',
+      'knife',
+      'folk',
+      'warm clothes',
+      'paper cups',
+      'plastic plates'
     ]
   }
 
@@ -21,7 +30,7 @@ export default class CheckboxList extends Component {
       if (arr) {
         this.setState({
           checkBoxesValues: arr
-        }); 
+        });
       }
     })
   }
@@ -40,7 +49,7 @@ export default class CheckboxList extends Component {
       newArr.splice(index, 1);
       this.setState({
         checkBoxesValues: newArr
-      }, () => AsyncStorage.setItem('arrOfCheckedBoxed', this.state.checkBoxesValues));
+      });
     } else {
       const newArr = [...checkBoxesValues];
       newArr.push(name);
@@ -67,7 +76,7 @@ export default class CheckboxList extends Component {
   }
 
   addItem = () => {
-    const newArr = [ ...this.state.checkBoxes ];
+    const newArr = [...this.state.checkBoxes];
     newArr.push(this.state.textInputValue);
     this.setState({
       checkBoxes: newArr,
@@ -77,7 +86,7 @@ export default class CheckboxList extends Component {
 
   render() {
     return (
-      <ScrollView contentContainerStyle={{ height: '100%' }}>
+      <ScrollView>
         {this.state.checkBoxes.map((name, index) => this.renderCheckBox(name, index))}
         <View style={{ alignItems: 'center', marginTop: 20 }}>
           <Button onPress={() => this.toggleModal(true)} title="Add" style={{ width: 200 }} />
@@ -92,9 +101,9 @@ export default class CheckboxList extends Component {
               <TextInput
                 value={this.state.textInputValue}
                 onChangeText={this.handleInputChange}
-                style={{ borderBottomWidth: 1, paddingBottom: 10  }}
+                style={{ borderBottomWidth: 1, paddingBottom: 6, marginBottom: 20 }}
               />
-              <Button 
+              <Button
                 title="Add item"
                 onPress={this.addItem}
               />

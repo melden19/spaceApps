@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, ImageBackground, ScrollView} from 'react-native';
 import { FontText } from '../../components';
-export default class NaturalHazardStyle extends Component {
+export default class GeoDis extends Component {
   state = {
     btnPressStatus: false
   }
@@ -10,14 +10,13 @@ export default class NaturalHazardStyle extends Component {
     title: '',
   };
 
-  goToNaturals = () => {
-    const { navigate } = this.props.navigation;
-    navigate('Natural', null);
-  }
-
   goToGeo = () => {
     const { navigate } = this.props.navigation;
     navigate('GeoD', null);
+  }
+  goToEarth = () => {
+    const { navigate } = this.props.navigation;
+    navigate('EInf', null);
   }
   render() {
     return (
@@ -26,7 +25,7 @@ export default class NaturalHazardStyle extends Component {
 
         <View style={styles.titlecontainer}>
           <FontText isBold style={styles.title}>
-            Natural disasters
+            Geological disasters
           </FontText>  
           <View style={styles.undline}>
           </View>
@@ -35,24 +34,7 @@ export default class NaturalHazardStyle extends Component {
         <ImageBackground
           style={[styles.backgroundImg, styles.marginBottom]}
           imageStyle={{ borderRadius: 25 }}
-          source={require('../../assets/hydro.jpg')}
-          blurRadius={2}
-        >
-          <TouchableOpacity
-            activeOpacity={0}
-            style={styles.navigationBtn}
-            onHideUnderlay={this.onHideOverlay}
-            onShowUnderlay={this.onShowUnderlay}
-            onPress={this.goToNaturals}
-          >
-            <FontText style={styles.text}>Hydrological Disaster</FontText>
-          </TouchableOpacity >
-        </ImageBackground>
-        
-        <ImageBackground
-          style={[styles.backgroundImg, styles.marginBottom]}
-          imageStyle={{ borderRadius: 25 }}
-          source={require('../../assets/geo.jpg')}
+          source={require('../../assets/sinkhole.jpg')}
           blurRadius={2}
         >
           <TouchableOpacity
@@ -62,7 +44,24 @@ export default class NaturalHazardStyle extends Component {
             onShowUnderlay={this.onShowUnderlay}
             onPress={this.goToGeo}
           >
-            <FontText style={styles.text}>Geological Disaster</FontText>
+            <FontText style={styles.text}>Sinkhole</FontText>
+          </TouchableOpacity >
+        </ImageBackground>
+        
+        <ImageBackground
+          style={[styles.backgroundImg, styles.marginBottom]}
+          imageStyle={{ borderRadius: 25 }}
+          source={require('../../assets/earthquake.jpg')}
+          blurRadius={2}
+        >
+          <TouchableOpacity
+            activeOpacity={0}
+            style={styles.navigationBtn}
+            onHideUnderlay={this.onHideOverlay}
+            onShowUnderlay={this.onShowUnderlay}
+            onPress={this.goToEarth}
+          >
+            <FontText style={styles.text}>Earthquake</FontText>
           </TouchableOpacity >
         </ImageBackground>     
 
@@ -70,7 +69,7 @@ export default class NaturalHazardStyle extends Component {
         <ImageBackground
           style={[styles.backgroundImg, styles.marginBottom]}
           imageStyle={{ borderRadius: 25 }}
-          source={require('../../assets/meteo.jpg')}
+          source={require('../../assets/landslide.jpg')}
           blurRadius={2}
         >
           <TouchableOpacity
@@ -78,17 +77,16 @@ export default class NaturalHazardStyle extends Component {
             style={styles.navigationBtn}
             onHideUnderlay={this.onHideOverlay}
             onShowUnderlay={this.onShowUnderlay}
-            onPress={this.goToNaturals}
+            onPress={this.goToGeo}
           >
-            <FontText style={styles.text}>Meteorological</FontText>
-            <FontText style={styles.text}>Disaster</FontText>
+            <FontText style={styles.text}>Landslide</FontText>        
           </TouchableOpacity >
         </ImageBackground>
         
         <ImageBackground
           style={[styles.backgroundImg, styles.marginBottom]}
           imageStyle={{ borderRadius: 25 }}
-          source={require('../../assets/space.jpg')}
+          source={require('../../assets/volcanic.jpg')}
           blurRadius={2}
         >
           <TouchableOpacity
@@ -96,16 +94,16 @@ export default class NaturalHazardStyle extends Component {
             style={styles.navigationBtn}
             onHideUnderlay={this.onHideOverlay}
             onShowUnderlay={this.onShowUnderlay}
-            onPress={this.goToNaturals}
+            onPress={this.goToGeo}
           >
-            <FontText style={styles.text}>Space Disaster</FontText>
+            <FontText style={styles.text}>Volcanic Eruption</FontText>
           </TouchableOpacity >
         </ImageBackground>    
 
          <ImageBackground
           style={[styles.backgroundImg, styles.marginBottom]}
           imageStyle={{ borderRadius: 25 }}
-          source={require('../../assets/wildfire.jpg')}
+          source={require('../../assets/mudflow.jpg')}
           blurRadius={2}
         >
           <TouchableOpacity
@@ -113,9 +111,9 @@ export default class NaturalHazardStyle extends Component {
             style={styles.navigationBtn}
             onHideUnderlay={this.onHideOverlay}
             onShowUnderlay={this.onShowUnderlay}
-            onPress={this.goToNaturals}
+            onPress={this.goToGeo}
           >
-            <FontText style={styles.text}>Wildfires</FontText>
+            <FontText style={styles.text}>Mudflow</FontText>
           </TouchableOpacity >
         </ImageBackground>    
        

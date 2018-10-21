@@ -92,7 +92,7 @@ export default class SelectTypePage extends React.Component {
           onShowUnderlay={this.onShowUnderlay}
           onPress={this.goToNaturals}
         >
-          <FontText style={styles.text}>Antropogenic Hazards</FontText>
+          <FontText style={styles.text}>Antropogenic Disasters</FontText>
         </TouchableOpacity >
       </ImageBackground>
 

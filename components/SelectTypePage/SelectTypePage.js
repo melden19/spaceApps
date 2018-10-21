@@ -37,6 +37,8 @@ export default class SelectTypePage extends React.Component {
         <FontText isBold style={styles.title}>
           Choose disaster type
         </FontText>
+        <View style={styles.undline}>
+        </View>
       </View>
       <ImageBackground
         style={[styles.backgroundImg, styles.marginBottom]}
@@ -70,7 +72,7 @@ export default class SelectTypePage extends React.Component {
           onShowUnderlay={this.onShowUnderlay}
           onPress={this.goToAntropogenic}
         >
-          <FontText style={styles.text}>Antropogenic Hazards</FontText>
+          <FontText style={styles.text}>Antropogenic Disasters</FontText>
         </TouchableOpacity >
       </ImageBackground>
 
@@ -118,6 +120,16 @@ const styles = StyleSheet.create({
     height: 50,
     marginBottom: 20,
   },
+  undline: {
+    position: "relative",
+    marginTop: 7,
+    justifyContent: "center",
+    alignItems: "center",
+    width: '90%',
+    height: 1,
+    backgroundColor: "#B4D0DD"
+    
+  },
   title: {
     fontSize: 25
   },
@@ -160,7 +172,13 @@ const styles = StyleSheet.create({
     width: '40%',
     height: '10%',
     marginTop: 15,
-    borderRadius: 40
+    borderRadius: 40,
+    
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 1,
   },
   sostext: {
     fontSize: 40,

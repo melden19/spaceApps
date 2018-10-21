@@ -64,7 +64,7 @@ export default class Reg extends React.Component {
         </View>
         </View>
       </View>
-    )
+   )
   }
 }
 

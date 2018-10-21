@@ -12,7 +12,9 @@ import {
   TestLoginPage,
   TestRegPage,
   ListFromServer,
-  CheckboxList
+  CheckboxList,
+  GeoDisPage,
+  EarthInfoPage
 } from './components';
 import general from './actions/general';
 import rootReducer from './reducers';
@@ -24,7 +26,9 @@ const RouterPages = createStackNavigator({
   SelectType: {screen: SelectTypePage},
   Natural : { screen: NaturalHazards },
   ListFromServer: { screen: ListFromServer },
-  CheckboxList: { screen: CheckboxList }
+  CheckboxList: { screen: CheckboxList },
+  GeoD: {screen: GeoDisPage},
+  EInf: {screen: EarthInfoPage}
 });
 class Router extends React.Component {
   async componentDidMount() {

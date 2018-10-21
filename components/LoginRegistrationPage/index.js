@@ -1,2 +1,2 @@
-import Login from './LoginRegistrationPage';
-export default Login;
+import LogReg from './LoginRegistrationPage';
+export default LogReg;

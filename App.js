@@ -2,18 +2,22 @@ import React from 'react';
 import { createStore } from 'redux';
 import { createStackNavigator } from 'react-navigation';
 import { connect, Provider } from 'react-redux';
-import { Font } from 'expo'
+import { Font } from 'expo';
 
 import {
   LoginRegistrationPage,
   NaturalHazards,
-  SelectTypePage
+  SelectTypePage,
+  TestLoginPage,
+  TestRegPage
 } from './components';
 import general from './actions/general';
 import rootReducer from './reducers';
 
-const RouterPages = createStackNavigator({
-  Login: { screen: LoginRegistrationPage },
+const RouterPages = createStackNavigator({  
+  LogReg: {screen: LoginRegistrationPage},
+  Login: { screen: TestLoginPage },
+  Reg: {screen: TestRegPage}, 
   SelectType: {screen: SelectTypePage},
   Natural : { screen: NaturalHazards },
 });

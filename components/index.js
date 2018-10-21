@@ -8,3 +8,4 @@ export ListFromServer from './ListFromServer';
 export CheckboxList from './CheckboxList';
 export GeoDisPage from './GeoDisPage';
 export EarthInfoPage from './EarthInfoPage';
+export VInfoPage from './VInfoPage';

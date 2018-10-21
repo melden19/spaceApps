@@ -14,7 +14,8 @@ import {
   ListFromServer,
   CheckboxList,
   GeoDisPage,
-  EarthInfoPage
+  EarthInfoPage,
+  VInfoPage
 } from './components';
 import general from './actions/general';
 import rootReducer from './reducers';
@@ -28,7 +29,8 @@ const RouterPages = createStackNavigator({
   ListFromServer: { screen: ListFromServer },
   CheckboxList: { screen: CheckboxList },
   GeoD: {screen: GeoDisPage},
-  EInf: {screen: EarthInfoPage}
+  EInf: {screen: EarthInfoPage},
+  VInf: {screen: VInfoPage}
 });
 class Router extends React.Component {
   async componentDidMount() {

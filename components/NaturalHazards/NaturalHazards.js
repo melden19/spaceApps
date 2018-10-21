@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, ImageBackground, ScrollView} from 'react-native';
 
-
 export default class NaturalHazardStyle extends Component {
   state = {
     btnPressStatus: false
@@ -17,7 +16,7 @@ export default class NaturalHazardStyle extends Component {
   }
   render() {
     return (
-      <ScrollView>
+      <ScrollView style={{ backgroundColor: '#c9efff'}}>
       <View style={styles.container}>
 
         <View style={styles.titlecontainer}>
@@ -29,7 +28,7 @@ export default class NaturalHazardStyle extends Component {
         <ImageBackground
           style={[styles.backgroundImg, styles.marginBottom]}
           imageStyle={{ borderRadius: 25 }}
-          source={require('../../assets/vGWuOec.jpg')}
+          source={require('../../assets/nature.jpg')}
           blurRadius={3}
         >
           <TouchableOpacity
@@ -46,7 +45,7 @@ export default class NaturalHazardStyle extends Component {
         <ImageBackground
           style={[styles.backgroundImg, styles.marginBottom]}
           imageStyle={{ borderRadius: 25 }}
-          source={require('../../assets/DkK2YzIX0AEcx9_.jpg')}
+          source={require('../../assets/nature.jpg')}
           blurRadius={3}
         >
           <TouchableOpacity
@@ -64,7 +63,7 @@ export default class NaturalHazardStyle extends Component {
         <ImageBackground
           style={[styles.backgroundImg, styles.marginBottom]}
           imageStyle={{ borderRadius: 25 }}
-          source={require('../../assets/vGWuOec.jpg')}
+          source={require('../../assets/nature.jpg')}
           blurRadius={3}
         >
           <TouchableOpacity
@@ -81,7 +80,7 @@ export default class NaturalHazardStyle extends Component {
         <ImageBackground
           style={[styles.backgroundImg, styles.marginBottom]}
           imageStyle={{ borderRadius: 25 }}
-          source={require('../../assets/DkK2YzIX0AEcx9_.jpg')}
+          source={require('../../assets/nature.jpg')}
           blurRadius={3}
         >
           <TouchableOpacity
@@ -98,7 +97,7 @@ export default class NaturalHazardStyle extends Component {
          <ImageBackground
           style={[styles.backgroundImg, styles.marginBottom]}
           imageStyle={{ borderRadius: 25 }}
-          source={require('../../assets/DkK2YzIX0AEcx9_.jpg')}
+          source={require('../../assets/nature.jpg')}
           blurRadius={3}
         >
           <TouchableOpacity

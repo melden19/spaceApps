@@ -2,7 +2,9 @@ import React from 'react';
 import SelectTypePage from '../SelectTypePage';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { FontText } from '../../components';
+
 export default class LoginRegistrationPage extends React.Component {
+
   render() {
     const { navigate } = this.props.navigation;
     return (

@@ -1,32 +1,63 @@
-import React from 'react';
-import SelectTypePage from '../SelectTypePage';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React from 'react'
+import { View, StyleSheet, Text, TouchableOpacity, ImageBackground, TextInput, Button, Keyboard } from 'react-native';
 import { FontText } from '../../components';
-
-export default class LoginRegistrationPage extends React.Component {
-
+export default class LogReg extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <FontText isBold>Open up </FontText>
-        <Text>Open up </Text>
-        <Button
-          title="Go to Jane's profile"
-          onPress={() =>
-            navigate('SelectType', { someData: 'data' })
-          }
-        />
+        <View style={styles.innercontainer}>
+          <View style={styles.inputbox}>
+            <Button style={styles.buttonstyle}
+            title="Sign in"
+            onPress={() =>
+              navigate('Login', { someData: 'data' })
+            }
+          />
+        </View>
+        <View style={styles.inputbox}>
+            <Button style={styles.buttonstyle}
+            title="Sign up"
+            onPress={() =>
+              navigate('Reg', { someData: 'data' })
+            }
+          />
+        </View> 
+        </View>
       </View>
-    );
+    )
   }
 }
 
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: "100%",
+    height: "100%",
+    backgroundColor: "#f2fcff",
+    alignItems: "center", 
+    flexDirection: "column",
+    justifyContent: "center"
   },
+  innercontainer: {
+    position: "relative",    
+    justifyContent: "center",
+    alignItems: "center",
+    width: 250,
+    height: 220,
+    marginBottom: 50,
+    backgroundColor: "white",
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: "#e6e6e6"
+  },
+  textstyle: {
+    fontSize: 20,
+  },
+  inputbox: {
+    justifyContent: "center",
+   
+    width: 150,
+    height: 70
+  }, 
 });
